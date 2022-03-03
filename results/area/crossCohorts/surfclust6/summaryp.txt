@@ -1,0 +1,43 @@
+# Cluster Growing Summary (mri_surfcluster)
+# $Id: mri_surfcluster.c,v 1.57.2.3 2016/11/17 18:19:42 zkaufman Exp $
+# $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+# CreationTime 2022/02/18-13:41:29-GMT
+# cmdline mri_surfcluster.bin --in /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/sum5Pos.nii.gz --subject 40tvs8ref_sym_20 --hemi lh --surf inflated --minarea 200 --annot aparc.DKTatlas40 --sum /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/surfclust6/summaryp.txt --olab /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/surfclust6/cluster.area.6p --thmin 6 
+# cwd /cluster/p/p23/cluster/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/scripts
+# sysname  Linux
+# hostname p23-rhel7-01.tsd.usit.no
+# machine  x86_64
+# FixVertexAreaFlag 1
+# FixSurfClusterArea 1
+# 
+# Input      /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/sum5Pos.nii.gz
+# Frame Number      0
+# srcsubj 40tvs8ref_sym_20
+# hemi lh
+# surface inflated
+# group_avg_surface_area 91404.2
+# group_avg_vtxarea_loaded 0
+# annot aparc.DKTatlas40
+# SUBJECTS_DIR /cluster/projects/p23/tools/mri/freesurfer/freesurfer.6.0.0/subjects
+# SearchSpace_mm2 66647.7
+# SearchSpace_vtx 163842
+# Bonferroni 0
+# Minimum Threshold 6
+# Maximum Threshold infinity
+# Threshold Sign    abs
+# AdjustThreshWhenOneTail 1
+# Area Threshold    200 mm^2
+# Overall max 7 at vertex 15
+# Overall min 0 at vertex 0
+# NClusters          8
+# FixMNI = 1
+# 
+# ClusterNo  Max   VtxMax   Size(mm^2)  TalX   TalY   TalZ    NVtxs    WghtVtx   Annot
+   1        7.000      15   3388.27    -15.9   -8.2   42.9  11032    75395.00  postcentral
+   2        7.000      81   1487.07    -15.3   28.9  -45.8   4679    31830.00  superiortemporal
+   3        7.000     112    430.91     33.6   65.6  -27.3    626     4093.00  rostralanteriorcingulate
+   4        7.000     122    421.88     -6.0   54.2  -17.9   1050     7097.00  parstriangularis
+   5        7.000      35    375.41     34.0  -24.5   13.5   1218     8194.00  isthmuscingulate
+   6        7.000     614    335.16    -10.0    7.7  -58.3    607     3933.00  fusiform
+   7        7.000     254    233.86     29.3   52.6   36.2    350     2362.00  superiorfrontal
+   8        7.000    1126    157.22     -7.4   61.9  -35.8    409     2635.00  lateralorbitofrontal

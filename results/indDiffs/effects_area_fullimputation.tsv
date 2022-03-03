@@ -1,0 +1,15 @@
+labs roi roiname cognition.effect p.cog hand.effect p sex.effect p.1 icv.effect p.2
+cluster.area.6p.0001.label 01 L_Postcentral-gyrus_Supramarginal 0.029 7.33e-07 -0.028 1.09e-01 0.189 2.91e-50 0.017 8.07e-03
+cluster.area.6p.0002.label 02 L_Anterior-temporal_Parahippocampal-gyrus -0.014 1.75e-02 -0.049 5.19e-03 0.199 2.35e-55 -0.014 2.92e-02
+cluster.area.6p.0003.label 03 L_Anterior-cingulate_Subcallosal -0.011 5.68e-02 0.026 1.34e-01 -0.169 2.26e-40 0.085 9.21e-42
+cluster.area.6p.0004.label 04 L_Anterior-insula 0.014 1.31e-02 -0.115 6.65e-11 0.005 6.98e-01 0.027 1.66e-05
+cluster.area.6p.0005.label 05 L_Retrosplenial-cortex 0.009 1.24e-01 -0.024 1.69e-01 0.089 2.03e-12 -0.049 8.13e-15
+cluster.area.6p.0006.label 06 L_Temporal-pole_Inferior-temporal-gyrus 0.011 5.54e-02 0.012 4.92e-01 -0.009 4.74e-01 -0.027 2.67e-05
+cluster.area.6p.0007.label 07 L_Superior-frontal-gyrus 0.006 2.99e-01 -0.017 3.25e-01 0.066 2.17e-07 -0.033 1.73e-07
+cluster.area.6n.0001.label 01 R_Parieto-occipital_sulcus 0.009 1.23e-01 0.013 4.55e-01 0.022 7.64e-02 0.046 2.81e-13
+cluster.area.6n.0002.label 02 R_Inferior-parietal_Lateral-occipital 0.012 4.60e-02 -0.021 2.41e-01 0.134 4.64e-26 -0.02 1.64e-03
+cluster.area.6n.0003.label 03 R_Cingulate 0.002 7.80e-01 0.036 4.33e-02 0.042 1.04e-03 -0.059 1.55e-20
+cluster.area.6n.0004.label 04 R_Middle-frontal-gyrus 0.009 1.27e-01 -0.019 2.88e-01 0.062 1.25e-06 0.003 6.82e-01
+cluster.area.6n.0005.label 05 R_Superior-temporal-sulcus -0.009 1.31e-01 -0.018 3.10e-01 0.01 4.12e-01 0.004 5.56e-01
+cluster.area.6n.0006.label 06 R_Superior-frontal-gyrus 0.008 1.57e-01 0.029 9.72e-02 -0.132 3.67e-25 0.057 2.58e-19
+cluster.area.6n.0007.label 07 R_Gyrus-rectus 0.015 1.04e-02 0.018 3.02e-01 -0.164 1.95e-38 -0.038 1.23e-09

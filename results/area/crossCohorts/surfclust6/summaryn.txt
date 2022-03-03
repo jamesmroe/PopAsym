@@ -1,0 +1,42 @@
+# Cluster Growing Summary (mri_surfcluster)
+# $Id: mri_surfcluster.c,v 1.57.2.3 2016/11/17 18:19:42 zkaufman Exp $
+# $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+# CreationTime 2022/02/18-13:41:37-GMT
+# cmdline mri_surfcluster.bin --in /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/sum5Neg.nii.gz --subject 40tvs8ref_sym_20 --hemi lh --surf inflated --minarea 200 --annot aparc.DKTatlas40 --sum /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/surfclust6/summaryn.txt --olab /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/surfclust6/cluster.area.6n --thmin 6 
+# cwd /cluster/p/p23/cluster/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/surfclust6
+# sysname  Linux
+# hostname p23-rhel7-01.tsd.usit.no
+# machine  x86_64
+# FixVertexAreaFlag 1
+# FixSurfClusterArea 1
+# 
+# Input      /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/sum5Neg.nii.gz
+# Frame Number      0
+# srcsubj 40tvs8ref_sym_20
+# hemi lh
+# surface inflated
+# group_avg_surface_area 91404.2
+# group_avg_vtxarea_loaded 0
+# annot aparc.DKTatlas40
+# SUBJECTS_DIR /cluster/projects/p23/tools/mri/freesurfer/freesurfer.6.0.0/subjects
+# SearchSpace_mm2 66647.7
+# SearchSpace_vtx 163842
+# Bonferroni 0
+# Minimum Threshold 6
+# Maximum Threshold infinity
+# Threshold Sign    abs
+# AdjustThreshWhenOneTail 1
+# Area Threshold    200 mm^2
+# Overall max 7 at vertex 22
+# Overall min 0 at vertex 0
+# NClusters          7
+# FixMNI = 1
+# 
+# ClusterNo  Max   VtxMax   Size(mm^2)  TalX   TalY   TalZ    NVtxs    WghtVtx   Annot
+   1        7.000      33   2975.07     23.2  -66.5   22.7   7525    51225.00  precuneus
+   2        7.000      30   2315.40    -19.3  -59.3   17.1   6414    43957.00  inferiorparietal
+   3        7.000      23   1087.32     37.4   35.7    8.2   2775    18797.00  caudalanteriorcingulate
+   4        7.000     172    853.53     13.4   94.7    3.9   1516    10087.00  superiorfrontal
+   5        7.000      83    574.45    -33.2  -22.9  -22.5   1757    11801.00  middletemporal
+   6        7.000      22    419.75     28.2   93.0  -20.0    599     4085.00  superiorfrontal
+   7        7.000     520    179.73     32.1   64.0  -42.2    325     2009.00  medialorbitofrontal

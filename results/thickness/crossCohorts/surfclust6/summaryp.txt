@@ -1,0 +1,49 @@
+# Cluster Growing Summary (mri_surfcluster)
+# $Id: mri_surfcluster.c,v 1.57.2.3 2016/11/17 18:19:42 zkaufman Exp $
+# $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+# CreationTime 2022/02/18-13:23:19-GMT
+# cmdline mri_surfcluster.bin --in /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/sum1Pos.nii.gz --subject 40tvs8ref_sym_20 --hemi lh --surf inflated --minarea 200 --annot aparc.DKTatlas40 --sum /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/surfclust6/summaryp.txt --olab /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/surfclust6/cluster.thickness.6p --thmin 6 
+# cwd /cluster/p/p23/cluster/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/area/crossCohorts/surfclust6
+# sysname  Linux
+# hostname p23-rhel7-01.tsd.usit.no
+# machine  x86_64
+# FixVertexAreaFlag 1
+# FixSurfClusterArea 1
+# 
+# Input      /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/sum1Pos.nii.gz
+# Frame Number      0
+# srcsubj 40tvs8ref_sym_20
+# hemi lh
+# surface inflated
+# group_avg_surface_area 91404.2
+# group_avg_vtxarea_loaded 0
+# annot aparc.DKTatlas40
+# SUBJECTS_DIR /cluster/projects/p23/tools/mri/freesurfer/freesurfer.6.0.0/subjects
+# SearchSpace_mm2 66647.7
+# SearchSpace_vtx 163842
+# Bonferroni 0
+# Minimum Threshold 6
+# Maximum Threshold infinity
+# Threshold Sign    abs
+# AdjustThreshWhenOneTail 1
+# Area Threshold    200 mm^2
+# Overall max 7 at vertex 0
+# Overall min 0 at vertex 2
+# NClusters          14
+# FixMNI = 1
+# 
+# ClusterNo  Max   VtxMax   Size(mm^2)  TalX   TalY   TalZ    NVtxs    WghtVtx   Annot
+   1        7.000      23   1704.12     37.4   35.7    8.2   4110    27093.00  caudalanteriorcingulate
+   2        7.000     109    910.57     16.0   60.0   40.1   1581     9900.00  superiorfrontal
+   3        7.000      15    756.23    -15.9   -8.2   42.9   2441    16281.00  postcentral
+   4        7.000       4    457.73    -35.2   23.3   -5.7   1485     9861.00  precentral
+   5        7.000     376    364.26     26.0    2.8   65.2   1135     7403.00  precentral
+   6        7.000     159    343.70      3.0  -25.8  -33.9    725     4907.00  fusiform
+   7        7.000     623    290.59    -15.4  -18.9  -45.2    537     3447.00  fusiform
+   8        7.000    1003    258.17    -10.4   46.9   31.7    595     3678.00  caudalmiddlefrontal
+   9        7.000    1059    255.82     27.8   14.3   42.1    425     2650.00  superiorfrontal
+  10        7.000     258    222.72     25.5  101.2  -24.6    416     2535.00  superiorfrontal
+  11        7.000     210    209.52     19.7  -40.2  -13.9    779     4988.00  lingual
+  12        7.000     900    194.48    -13.7    2.4    2.8    435     2766.00  postcentral
+  13        7.000       0    188.59     -3.0    5.6   52.6    811     5254.00  precentral
+  14        7.000     394    176.14     -6.9   84.8   -7.7    366     2322.00  rostralmiddlefrontal

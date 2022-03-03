@@ -1,0 +1,44 @@
+# Cluster Growing Summary (mri_surfcluster)
+# $Id: mri_surfcluster.c,v 1.57.2.3 2016/11/17 18:19:42 zkaufman Exp $
+# $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+# CreationTime 2022/02/18-13:23:30-GMT
+# cmdline mri_surfcluster.bin --in /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/sum1Neg.nii.gz --subject 40tvs8ref_sym_20 --hemi lh --surf inflated --minarea 200 --annot aparc.DKTatlas40 --sum /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/surfclust6/summaryn.txt --olab /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/surfclust6/cluster.thickness.6n --thmin 6 
+# cwd /cluster/p/p23/cluster/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/surfclust6
+# sysname  Linux
+# hostname p23-rhel7-01.tsd.usit.no
+# machine  x86_64
+# FixVertexAreaFlag 1
+# FixSurfClusterArea 1
+# 
+# Input      /cluster/projects/p23/projects/11_MemP/James/AgeSym/scripts/05-LME/P3code/results/thickness/crossCohorts/sum1Neg.nii.gz
+# Frame Number      0
+# srcsubj 40tvs8ref_sym_20
+# hemi lh
+# surface inflated
+# group_avg_surface_area 91404.2
+# group_avg_vtxarea_loaded 0
+# annot aparc.DKTatlas40
+# SUBJECTS_DIR /cluster/projects/p23/tools/mri/freesurfer/freesurfer.6.0.0/subjects
+# SearchSpace_mm2 66647.7
+# SearchSpace_vtx 163842
+# Bonferroni 0
+# Minimum Threshold 6
+# Maximum Threshold infinity
+# Threshold Sign    abs
+# AdjustThreshWhenOneTail 1
+# Area Threshold    200 mm^2
+# Overall max 7 at vertex 10
+# Overall min 0 at vertex 0
+# NClusters          9
+# FixMNI = 1
+# 
+# ClusterNo  Max   VtxMax   Size(mm^2)  TalX   TalY   TalZ    NVtxs    WghtVtx   Annot
+   1        7.000      10   2957.52    -33.2   -6.5  -21.6   8379    56834.00  superiortemporal
+   2        7.000      88   2378.53     -8.0  -85.7  -25.3   5117    33434.00  lateraloccipital
+   3        7.000      41    931.27     16.7  -42.6  -24.0   2290    15556.00  lingual
+   4        7.000      27    767.71     -9.5  -11.7    1.7   2218    14844.00  supramarginal
+   5        7.000     150    536.24      8.6   -5.5  -44.5   1762    11723.00  parahippocampal
+   6        7.000    1646    447.33     -5.7   27.8   -9.1    865     5345.00  insula
+   7        7.000      29    310.82    -34.6  -32.7    4.2   1173     7633.00  superiortemporal
+   8        7.000     299    289.65     22.9  -63.3   13.5    916     6027.00  precuneus
+   9        7.000     528    222.99    -14.8   61.5  -19.8    653     4117.00  parstriangularis
