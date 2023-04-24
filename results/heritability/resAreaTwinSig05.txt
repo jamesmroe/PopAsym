@@ -1,9 +1,0 @@
-lh.17Networks_LH_DefaultB_Temp_13
-lh.17Networks_LH_SalVentAttnA_FrMed_2
-lh.17Networks_LH_SomMotB_Aud_13
-lh.17Networks_LH_SomMotB_Aud_8
-lh.17Networks_LH_SomMotB_Aud_9
-lh.17Networks_LH_SomMotB_Cent_3
-lh.17Networks_LH_TempPar_5
-lh.17Networks_LH_VisCent_Striate_3
-lh.17Networks_LH_VisPeri_StriCal_4
