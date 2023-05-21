@@ -6,10 +6,11 @@ here()
 #SELECT OPTIONS ======================
 args = commandArgs(TRUE)
 datdir=as.character(args[1]) #SCRIPT ANALYZES INDIVIDUAL-LEVEL DATA THAT IS RESTRICTED TO COMPLY WITH DATA USAGE AGREEMENTS (see data availability section in manuscript)
+datdir="/Users/jamesroe/LCBC/Users/jamesroe/PHD_project/Paper3/data/" #NB! DEL
 saveres=0 #1/0
-cohort="LCBC" #select cohort
+# cohort="LCBC" #select cohort
 # cohort="HCP"
-# cohort="UKB"
+cohort="UKB"
 # brainvar="area" #select metric
 brainvar="thickness"
 #====================================#
@@ -29,8 +30,15 @@ library("ggpointdensity")
 
 
 #---data
-DF = read.csv(paste0(datdir, "PopAsym_",cohort,"_", brainvar,"_structuralCovar.csv"), stringsAsFactors = F, header = T, sep="\t")
+# DF = read.csv(paste0(datdir, "PopAsym_",cohort,"_", brainvar,"_structuralCovar.csv"), stringsAsFactors = F, header = T, sep="\t")
+#DEL
+#LCBC
+DF = read.csv(paste0(datdir, "PopAsym_",cohort,"_", brainvar,"_structuralCovar.csv"), stringsAsFactors = F, header = T, sep=",")
+DF$Subject=DF$fsid_base
+DF %<>% filter(Age >=55)
 
+#DEL
+DF %<>% filter(eAge <=55)
 
 #---clusters
 mergelabs = names(DF %>% select(contains("merge")))
@@ -122,7 +130,8 @@ RR=DF %>% filter(hemi==0) %>% select(c(
 #CALC ASYM + INVERSE AI's IN RIGHTWARD ROIS
 ASY = (LL - RR) / ((LL + RR) / 2)
 ASY[,c(nlabs)]=ASY[,c(nlabs)]*-1
-
+#DEL
+# ASY[,c(nlabs)]=ASY[,c(nlabs)]
 
 #two large outliers in HCP thickness data detected (SI Fig 8)
 plot(ASY$wMeanP,ASY$wMeanN*-1,col="pink")
@@ -154,7 +163,7 @@ db.out[outliersR,]
 if (cohort == "HCP") {
   # outliersvisual = c(894067, 132118)
   ASY = ASY[-which(sublink %in% outliers),]
-  DF = DF[-which(DF$Subject %in% outliers),] #MIGHT HAVE CHANGED SOMETHING
+  DF = DF[-which(DF$Subject %in% outliers),]
   sublink = sublink[-which(sublink %in% outliers)]
 }
 
@@ -169,6 +178,12 @@ if (cohort=="UKB") {
     select(Subject, eAge, sex, ICV) %>% mutate(ICV = scale(ICV, T, T))
   
 } else if (cohort == "LCBC") {
+  #DEL
+  ep="/Users/jamesroe/LCBC/Users/jamesroe/PHD_project/Paper2/AgeSym/HDD_encrypted"
+  B = read.csv(file.path(ep,paste0("Statfiles/aseg.long.stats.",cohort,".txt")), stringsAsFactors = F, header = T, sep =" ")
+  B$Folder=substr(B$Measure.volume,1,19)
+  DF = merge(DF, B)
+  
   extradat = DF %>% filter(hemi == 1) %>% 
     mutate(ICV = scale(EstimatedTotalIntraCranialVol, T, T)) %>% 
     select(Subject, Age, Sex, Site_Name, fsid_base, ICV) 
@@ -313,7 +328,7 @@ max(abs(cormat-cormatICV))
 
 #---save results
 if (saveres == 1) {
-  save('cormat','cormatICV',file = here("results/structuralCovar",paste0("cormat.",cohort,".",brainvar,"-publish.Rda")))
+  save('cormat','cormatICV',file = here("results/structuralCovar",paste0("cormat.",cohort,"life.",brainvar,"-publish.Rda")))
 }
 cor(as.vector(cormat), as.vector(cormatICV))
 
@@ -468,7 +483,7 @@ if (brainvar == "thickness") {
     scree = scree + coord_cartesian(ylim = c(4,9))
   }
   
-  saveres=1
+  saveres=0
   if (saveres == 1 && brainvar == "thickness") {
     ggsave(filename = here("results/structuralCovar",
                            paste("scree", cohort, brainvar, ".png", sep = ".")), plot = scree, width = 8, height=8, dpi=300, units="cm")
@@ -546,6 +561,6 @@ if (brainvar == "thickness") {
   saveres=1
   if (saveres == 1 && brainvar == "thickness") {
     ggsave(filename = here("results/structuralCovar",
-                           paste("weightaverageplot", cohort, brainvar, "png", sep = ".")), plot = pmeanthick, width = 8, height=8, dpi=600, units="cm")
+                           paste("weightaverageplot", cohort, "55minus",brainvar, "png", sep = ".")), plot = pmeanthick, width = 8, height=8, dpi=600, units="cm")
   }
 }

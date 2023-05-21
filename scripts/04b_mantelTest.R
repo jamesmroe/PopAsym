@@ -6,8 +6,8 @@ here()
 
 #SELECT METRIC=========
 #SCRIPT TAKES SUMMARY-LEVEL DATA AS INPUT AND IS THUS FULLY REPRODUCIBLE WITH THE DATA PROVIDED HERE
-# brainvar="area"
-brainvar="thickness"
+brainvar="area"
+# brainvar="thickness"
 #=====================#
 
 
@@ -21,37 +21,20 @@ sapply(tmp.packages, require, character.only = T)
 rm(list=ls(pattern="tmp*"))
 
 
+# LOAD IN CORRELATION MATRICES FOR MANTEL TEST ---------------------------TEST
+load(here("results/structuralCovar",paste0("cormat.crossCohorts.",brainvar,".Rda")))
+M1=cormat1
+M2=cormat2
+M3=cormat3
+load(here("results/structuralCovar",paste0("cormat.crossCohorts.ICVcor",brainvar,".Rda")))
+M1icv=cormatICV1
+M2icv=cormatICV2
+M3icv=cormatICV3
 
-# LOAD IN CORRELATION MATRICES FOR MANTEL TEST ---------------------------
-#LCBC
-load(here(
-  "results/structuralCovar",
-  paste0("cormat.LCBC.", brainvar, "-publish.Rda")
-))
-M1 = cormat
-M1icv = cormatICV
+
 corrplot(M1,method="color",type="full",addCoef.col = "black",col=colorRampPalette(c("blue","white","orange2"))(25),tl.pos="n",tl.col = "blue",cl.cex = 0.8,cl.pos = "r",tl.cex = 0.8,number.cex = 0.8)
-rm(cormat, cormatICV)
-
-#UKB
-load(here(
-  "results/structuralCovar",
-  paste0("cormat.UKB.", brainvar, "-publish.Rda")
-))
-M2 = cormat
-M2icv = cormatICV
 corrplot(M2,method="color",type="full",addCoef.col = "black",col=colorRampPalette(c("blue","white","orange2"))(25),tl.pos="n",tl.col = "blue",cl.cex = 0.8,cl.pos = "r",tl.cex = 0.8,number.cex = 0.8)
-rm(cormat, cormatICV)
-
-#HCP
-load(here(
-  "results/structuralCovar",
-  paste0("cormat.HCP.", brainvar, "-publish.Rda")
-))
-M3 = cormat
-M3icv = cormatICV
 corrplot(M3,method="color",type="full",addCoef.col = "black",col=colorRampPalette(c("blue","white","orange2"))(25),tl.pos="n",tl.col = "blue",cl.cex = 0.8,cl.pos = "r",tl.cex = 0.8,number.cex = 0.8)
-rm(cormat, cormatICV)
 
 
 # TEST WHETHER ADDITIONALLY CORRECTING FOR ICV CHANGES INTERRELATIONS ---------------------------
@@ -109,7 +92,20 @@ for (i in 1:3) {
   print(RR[[i]])
   # plot(r1 <- mantel.rtest(qdistmat1,qdistmat2), main = "Mantel's test")
   # r1
-  # plot(qdistmat1,qdistmat2)
+  #cor.test(qdistmat1,qdistmat2)
+  
+  
+  #DEL
+  #plot(distmat1,distmat2); abline(lm(distmat2~distmat1))
+  
+  # tmp1=mat1
+  # tmp2=mat2
+  # diag(tmp1)=NA
+  # diag(tmp2)=NA
+  # plot(tmp1,tmp2); abline(lm(as.vector(tmp2)~as.vector(tmp1)))
+  # cor.test(as.vector(tmp1),as.vector(tmp2))
+
   # cor.test(qdistmat1,qdistmat2)
+  
 }
 

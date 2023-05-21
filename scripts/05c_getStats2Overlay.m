@@ -1,13 +1,13 @@
 function getStats2Overlay()
     
     %get projectdir (must run externally as func)
-    %matlab -nojvm -nodesktop -r "getStats2Overlay()"
+    %/Applications/MATLAB_R2018a.app/bin/matlab -nojvm -nodesktop -r "getStats2Overlay()"
     b=mfilename;
     disp(b);
     tmp = strsplit(b,'/');
     projpath = strjoin(tmp(1:length(tmp)-2),filesep)
     
-    
+    projpath='/Users/jamesroe/Dropbox/GitHub/PopAsym/';
     outdir=[projpath '/results/heritability'];
     labelname=[projpath '/annotInfo/vtx.csv'];
     addpath('/Applications/freesurfer/matlab')
@@ -31,13 +31,13 @@ function getStats2Overlay()
 	for i = 1:length(maps)
         [~, name,ext] = fileparts(maps(i).name); 
         filename = [outdir filesep name, '.mgh'];
-        if ~exist(filename)
+        %if ~exist(filename)
             disp(name)
             fid = fopen(maps(i).name); 
             A = csvread(maps(i).name);
             vol = A;
             save_mgh(vol, filename, M, mr_parms);
-        end
+        %end
     end
   
 end

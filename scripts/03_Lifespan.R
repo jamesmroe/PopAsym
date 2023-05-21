@@ -4,9 +4,10 @@ library("here")
 
 #SELECT OPTIONS ======================
 args = commandArgs(TRUE)
-datdir=as.character(args[1])
-saveplots=1
+# datdir=as.character(args[1])
+saveplots=0
 brainvar="thickness"
+datdir="/Users/jamesroe/LCBC/Users/jamesroe/PHD_project/Paper3/data/" #NB! DEL
 # brainvar="area"
 #====================================#
 
@@ -47,6 +48,7 @@ for (s in span){
       hemi_trajectories_knotlevels = list()
       diff_trajectories_knotlevels = list()
       clusters = list()
+      outobslist = list()
     }
     setTxtProgressBar(pb,i)
     
@@ -131,6 +133,7 @@ for (s in span){
     if (outperlab[i]>0) {
 
       outobs = LH[["Folder"]][outliers]
+      outobslist[[i]] = outobs
       LHc = LH %>% filter(!(Folder %in% outobs)) %>% select(-predictionsL, -partial_residualsL)
       RHc = RH %>% filter(!(Folder %in% outobs)) %>% select(-predictionsR, -partial_residualsR)
       DFc = rbind(LHc, RHc)

@@ -7,7 +7,7 @@ library("viridis")
 here()
 
 #SELECT OPTIONS ======================
-saveres = 1
+saveres = 0
 #====================================#
 
 RR = read.csv(here("results/heritability/clustersGENCORR.csv"), stringsAsFactors = F, sep = " ")
@@ -16,7 +16,7 @@ THICK = RR[RR$meas == "thickness",]
 
 
 #area = 78 tests
-#thick = 48 tests
+#thick = 55 tests
 #pairwise tests only when both traits achieving p<.05 uncorrected SNP-heritability
 nrow(AREA)
 nrow(THICK)
@@ -29,7 +29,8 @@ all.equal(THICK$fdr, p.adjust(THICK$pval,method="BH"))
 
 # RETRIEVE AREA GENETIC CORRELATIONS -----------------------------------------------
 #grab FDR-corrected results for area
-pp1=which(p.adjust(AREA$pval,method="BH")<0.05)
+pp1=which(AREA$pval<0.05)
+#which(p.adjust(AREA$pval,method="BH")<0.05)
 AREA[pp1,]
 
 #create corr matrix to fill
@@ -75,7 +76,7 @@ rMATarea[which(rMATarea==0)] = NA
 
 #save fig
 if (saveres == 1) {
-  filename = here("results/heritability/gencormat.area.png")
+  filename = here("results/heritability/gencormatuncorr.area.png")
   print(paste("saving", filename))
   png(filename = filename, width = 15, height = 15, units = "cm", res = 300)
   corrplot(rMATarea,method="circle",type="lower",
@@ -90,7 +91,8 @@ minarea = min(rMATarea,na.rm = T)
 
 # RETRIEVE THICKNESS GENETIC CORRELATIONS -----------------------------------------------
 #grab FDR-corrected results for thickness
-pp2 = which(p.adjust(THICK$pval,method="BH")<0.05)
+pp2 = which(THICK$pval<0.05)
+# pp2 = which(p.adjust(THICK$pval,method="BH")<0.05)
 THICK[pp2,]
 
 #create corr matrix to fill
@@ -125,20 +127,22 @@ corrplot(MATthick,method="color",col=viridis(50),type="full",addCoef.col = "blac
 #set 0s (not tested) to NA
 rMATthick[which(rMATthick==0)] = NA
 
+rMATthick[(10:20), (1:9)] = rMATthick[(10:20), (1:9)] * -1
+rMATthick[(1:9), (10:20)] = rMATthick[(1:9), (10:20)] * -1
 
 #add in min rG for area to lower tri (not visualized) to get same colour/size bar as areal results 
-rMATthick[20,1] = minarea
+# rMATthick[20,1] = minarea
 corrplot(rMATthick,method="circle",col=viridis(50),type="lower",
          addCoef.col = "black",tl.col = "blue",is.corr = F,tl.pos="n",na.label=" ")
 corrplot(rMATthick,method="circle",col=viridis(50),type="upper",tl.col = "blue",is.corr = F,tl.pos="n",na.label=" ")
 
 
 if (saveres == 1) {
-  filename = here("results/heritability/gencormat.thick.png")
+  filename = here("results/heritability/gencormatuncor.thick.png")
   print(paste("saving", filename))
   png(filename = filename, width = 15, height = 15, units = "cm", res = 300)
-  corrplot(rMATthick,method="circle",type="upper",
-           # addCoef.col = "black",
+  corrplot(rMATthick,method="circle",type="lower",
+           addCoef.col = "black",
            col=colorRampPalette(c("blue","white","orange2"))(25),tl.pos="n",na.label=" ",tl.col = "blue",cl.cex = 0.8,cl.pos = "r",tl.cex = 0.8,number.cex = 0.8) #,order = "hclust",addrect = 3,rect.col = "black")
   dev.off()
 }
